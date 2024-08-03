@@ -1,0 +1,165 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.fixedTop {
+    position: fixed;
+    top: 52px;
+    left: 0;
+    z-index: 1030;
+    width: 100%;
+}
+
+    .fixedTop .leftBorder {
+        border-left: 2px solid #7A8288;
+    }
+
+.navbarItem {
+    padding: 20px;
+    border: 1px solid black;
+    background-color: #151515;
+}
+
+.imageMargin {
+    margin-left: 20px;
+}
+
+.clickable-row {
+    cursor: pointer;
+}
+
+.well-color {
+    background-color: #1C1E22;
+}
+
+.no-padding {
+    padding: 0px;
+}
+
+.padding-xs {
+        padding: 2px;
+}
+
+.no-border-radius {
+    border-radius: 0px;
+}
+
+.no-border {
+    border: none;
+}
+
+.override-to-right-border {
+    border: none;
+    border-right: 1px solid black;
+}
+
+.pre-inverted {
+    background-color: #1C1E22;
+    color: white;
+}
+
+.header-title-index {
+    border: none;
+    border-right: 1px solid black;
+    border-radius: 0px;
+    width: 140px;
+}
+
+.header-title-specials {
+    border: none;
+    border-right: 1px solid black;
+    border-radius: 0px;
+    width: 200px;
+}
+
+.inset-15 {
+    margin-left: 15px;
+}
+
+.maze-container {
+    background-color: #1C1E22;
+    padding: 15px;
+}
+
+.canvas-sorting {
+    width: 100%;
+    height: auto;
+}
+
+.canvas-life {
+    /*position: relative;
+    width: 100%;
+    height: auto;*/
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* mobile webkit */
+}
+
+.canvas-prim {
+    width: 75%;
+    height: auto;
+    margin-top: 10px;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* mobile webkit */
+}
+
+.canvas-a-star {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* mobile webkit */
+}
+
+.canvas-responsive {
+	width: 100%;
+    height: auto;
+    margin-top: 10px;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* mobile webkit */
+}
+
+.code-container {
+    margin-left: 100px;
+}
+
+.inner-code-container {
+
+}
+
+.inner-code-container form {
+    display: inline-block;
+}
+
+.inner-code-container input {
+    margin: 10px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+
+.inner-code-container .link-area{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.assets img{
+    margin: 10px;
+}
+
+.hidden-element {
+    position: absolute;
+    top: 1337px;
+    left: 1337px;
+    color: #060606;
+}
+
+.hidden-element:hover {
+    color: white;
+}

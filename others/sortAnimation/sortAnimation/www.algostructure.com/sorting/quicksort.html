@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<!-- Mirrored from www.algostructure.com/sorting/quicksort.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 27 Jul 2024 16:34:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Maik Dreibholz">
+<meta name="description" content="Animation of the Quick Sort Algorithm and information about the implementation, time complexity, needed memory and stability.">
+
+<title>Quick Sort Algorithm Animation - algostructure.com</title>
+
+<link href="../Content/bootstrap.css" type="text/css" rel="stylesheet" />
+<link href="../Content/Site.css" type="text/css" rel="stylesheet" />
+
+<!-- jQuery library -->
+<script
+	src="../../ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="../../code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="../../maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!-- initialize tooltips and popovers-->
+<script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="popover"]').popover();
+        });
+</script>
+
+<!-- Copyright (c) 2000-2014 etracker GmbH. All rights reserved. -->
+<!-- This material may not be reproduced, displayed, modified or distributed -->
+<!-- without the express prior written permission of the copyright holder. -->
+<!-- etracker tracklet 4.0 -->
+<script type="text/javascript">
+    //var et_pagename = "";
+    //var et_areas = "";
+    //var et_url = "";
+    //var et_target = "";
+    //var et_ilevel = 0;
+    //var et_tval = "";
+    //var et_cust = 0;
+    //var et_tonr = "";
+    //var et_tsale = 0;
+    //var et_basket = "";
+    //var et_lpage = "";
+    //var et_trig = "";
+    //var et_sub = "";
+    //var et_se = "";
+    //var et_tag = "";
+    </script>
+    <script id="_etLoader" type="text/javascript" charset="UTF-8" data-secure-code="uLs8oE" src="../../static.etracker.com/code/e.js"></script>
+<!--     <noscript><link rel="stylesheet" media="all" href="//www.etracker.de/cnt_css.php?et=uLs8oE&amp;v=4.0&amp;java=n&amp;et_easy=0&amp;et_pagename=&amp;et_areas=&amp;et_ilevel=0&amp;et_target=,0,0,0&amp;et_lpage=0&amp;et_trig=0&amp;et_se=0&amp;et_cust=0&amp;et_basket=&amp;et_url=&amp;et_tag=&amp;et_sub=&amp;et_organisation=&amp;et_demographic=" /></noscript> -->
+<!-- etracker tracklet 4.0 end -->
+
+<script>
+        function showNavbarContent(id) {
+            try {
+                var sorting = document.getElementById('navSortingAlgorithms');
+                var specials = document.getElementById('navSpecials');
+                
+                if (sorting.id !== id)
+                    sorting.classList.remove("in");
+                if (specials.id !== id)
+                    specials.classList.remove("in");
+
+            } catch (error) {
+
+            }
+        }
+    </script></head>
+
+<body>
+
+	<div class="container body-content">
+	    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://www.algostructure.com/index.php">Algostructure</a>
+           </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                
+                <ul class="nav navbar-nav">
+
+                    <li><a role="button" onclick="showNavbarContent('navSortingAlgorithms')" data-toggle="collapse" data-target="#navSortingAlgorithms">Sorting Algorithms <span class="caret"></span></a></li>
+
+                    <li><a role="button" onclick="showNavbarContent('navSpecials')" data-toggle="collapse" data-target="#navSpecials">Specials <span class="caret"></span></a></li>
+
+                    <li><a href="https://www.algostructure.com/news.php">News</a></li>
+                </ul>
+            </div>
+
+            <div id="navSortingAlgorithms" class="collapse fixedTop">
+                <div class="navbarItem">
+                    <div class="container">
+                        <div class="text-right">
+                            <a role="button" onclick="showNavbarContent('navSortingAlgorithms')" data-toggle="collapse" data-target="#navSortingAlgorithms"><span class="glyphicon glyphicon-remove"></span></a>
+                        </div>
+
+                        
+<div class="row">
+    <div class="col-sm-3 col-xs-6 leftBorder">
+        <div>
+            <strong><a href="bogosort.html">BogoSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="bubblesort.html">BubbleSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="bucketsort.html">BucketSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="cocktailsort.html">CocktailSort</a></strong>
+        </div>
+    </div>
+    <div class="col-sm-3 col-xs-6 leftBorder">
+        <div>
+            <strong><a href="combsort.html">CombSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="cyclesort.html">CycleSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="gnomesort.html">GnomeSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="heapsort.html">HeapSort</a></strong>
+        </div>
+    </div>
+    <div class="col-sm-3 col-xs-6 leftBorder">
+        <div>
+            <strong><a href="insertionsort.html">InsertionSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="mergesort.html">MergeSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="oddevensort.html">OddevenSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="quicksort.html">QuickSort</a></strong>
+        </div>
+    </div>
+    <div class="col-sm-3 col-xs-6 leftBorder">
+        <div>
+            <strong><a href="radixsort.html">RadixSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="selectionsort.html">SelectionSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="shellsort.html">ShellSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="stoogesort.html">StoogeSort</a></strong>
+        </div>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+            <div id="navSpecials" class="collapse fixedTop">
+                <div class="navbarItem">
+                    <div class="container">
+                        <div class="text-right">
+                            <a role="button" onclick="showNavbarContent('navSpecials')" data-toggle="collapse" data-target="#navSpecials"><span class="glyphicon glyphicon-remove"></span></a>
+                        </div>
+
+                        <div class="row">
+    <div class="col-sm-6">
+        <div class="text-center">
+            <strong><a href="https://www.algostructure.com/specials/life.php">Conway's Game of Life</a></strong>
+            <hr />
+            <p>
+                The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970.
+            </p>
+            
+    		<br />
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="text-center">
+            <strong><a href="https://www.algostructure.com/specials/maze.php">Maze Creator</a></strong>
+            <hr />
+            <p>
+                Maze generation algorithms are automated methods for the creation of mazes.
+            </p>
+        </div>
+    </div>
+</div>                    </div>
+                </div>
+            </div>
+        </div>
+    </div>        <br />
+        <!-- content start -->
+        
+        <div class="table-responsive">
+
+    <table class="table table-bordered">
+        <thead>
+            <tr class="danger">
+                <th class="text-center">Name</th>
+                <th class="text-center">Best-case</th>
+                <th class="text-center">Average-case</th>
+                <th class="text-center">Worst-case</th>
+                <th class="text-center">Memory</th>
+                <th class="text-center">Stable</th>
+            </tr>
+        </thead>
+        <tbody class="text-center well-color">
+            <tr>
+                <td>QuickSort</td>
+                <td>n log n</td>
+                <td>n log n</td>
+                <td>n<sup>2</sup></td>
+                <td>average: log n <br /> worst: n</td>
+                <td>no</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>
+
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        <h3 class="panel-title text-center">QuickSort</h3>
+    </div>
+    <div class="panel-body well-color no-padding">
+        <br />
+        <p id="buttons" class="text-center">
+            <input id="inputField" type="number" onkeydown="if (event.keyCode == 13) add()" min="1" max="99" step="1" value="1" size="10" maxlength="2">
+            <button id="add" onclick="add()" class="btn btn-primary btn-sm">Add</button>
+            <button id="random" onclick="addRandom()" class="btn btn-primary btn-sm">Add 10 Random Key</button>
+            <button id="sort" onclick="initSort()" class="btn btn-primary btn-sm">Sort</button>
+            <button id="fast" onclick="initFastSort()" class="btn btn-primary btn-sm">Sort 100 Keys Fast</button>
+        </p>
+
+        <p id="buttons2" class="text-center">
+            <button id="pp" onclick="pausePlay()" class="btn btn-primary btn-sm">Pause/Play</button>
+            <button id="stop" onclick="stopButton()" class="btn btn-primary btn-sm">Stop</button>
+        </p>
+
+        <canvas class="canvas-sorting" id="paint" width="1108" height="500">
+            Your browser does not support the HTML5 canvas tag.
+        </canvas>
+    </div>
+</div>
+
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        <h3 class="panel-title">Java Code</h3>
+    </div>
+    <div class="panel-body well-color">
+            <pre class="pre-inverted no-border">
+public void quickSort(int[] array, int left, int right) {
+     int i, j, v;
+     while ( right &gt; left ) {
+          j = right;
+          i = left - 1;
+          v = array[ right ];
+
+          while ( true ) {
+               do {
+                    i++;
+               } while ( array[ i ] &lt; v &amp;&amp; i &lt; j );
+               do {
+                    j--;
+               } while ( array[ j ] &gt; v &amp;&amp; i &lt; j );
+
+               if ( i &gt;= j )
+                    break;
+
+               swapKeys( array , i , j );
+
+          }
+
+          swapKeys( array , i , right );
+
+          if (( i - 1 - left ) &lt;= ( right - i - 1 )) {
+               quickSort( array , left , i - 1 );
+               left = i + 1;
+          } else {
+               quickSort( array , i + 1 , right );
+               right = i - 1;
+          }
+     }
+}
+
+public void swapKeys(int[] array, int i, int j) {
+     int temp;
+     temp = array[ i ];
+     array[ i ] = array[ j ];
+     array[ j ] = temp;
+} 
+            </pre>
+    </div>
+</div>
+
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        <h3 class="panel-title">How to use</h3>
+    </div>
+    <div class="panel-body well-color">
+        <p>
+            Use the textfield to type in a number and add it by either pressing ENTER or by clicking on the "Add" button. <br />
+            You can also add 10 random numbers at once by clicking on the "10 Random Keys" button. Overall you can add up to 50 keys. <br />
+            The "Sort" button starts to sort the keys with the selected algorithm. Alternatively you can sort 100 random keys fast for a quick impression of how the algorithm works. <br />
+
+        </p>
+    </div>
+</div>
+
+<div class="panel panel-danger">
+    <div class="panel-heading no-padding">
+        <h3 class="panel-title"><a href="index.html" class="btn btn-danger no-border-radius override-to-right-border">Sorting Algorithms</a></h3>
+    </div>
+    <div class="panel-body well-color">
+        
+<div class="row">
+    <div class="col-sm-3 col-xs-6 leftBorder">
+        <div>
+            <strong><a href="bogosort.html">BogoSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="bubblesort.html">BubbleSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="bucketsort.html">BucketSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="cocktailsort.html">CocktailSort</a></strong>
+        </div>
+    </div>
+    <div class="col-sm-3 col-xs-6 leftBorder">
+        <div>
+            <strong><a href="combsort.html">CombSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="cyclesort.html">CycleSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="gnomesort.html">GnomeSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="heapsort.html">HeapSort</a></strong>
+        </div>
+    </div>
+    <div class="col-sm-3 col-xs-6 leftBorder">
+        <div>
+            <strong><a href="insertionsort.html">InsertionSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="mergesort.html">MergeSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="oddevensort.html">OddevenSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="quicksort.html">QuickSort</a></strong>
+        </div>
+    </div>
+    <div class="col-sm-3 col-xs-6 leftBorder">
+        <div>
+            <strong><a href="radixsort.html">RadixSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="selectionsort.html">SelectionSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="shellsort.html">ShellSort</a></strong>
+        </div>
+        <div>
+            <strong><a href="stoogesort.html">StoogeSort</a></strong>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+<script src="../Scripts/Sorting/quickScript.js"></script>
+        
+        <!-- content end -->
+        <hr />
+                <footer class="text-center">
+            <p>
+                &copy; 2024 - Algostructure.com<br />
+                <a href="https://www.algostructure.com/contact.php">Contact</a>
+            </p>
+        </footer>    </div>
+    
+</body>
+
+
+<!-- Mirrored from www.algostructure.com/sorting/quicksort.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 27 Jul 2024 16:34:51 GMT -->
+</html>
